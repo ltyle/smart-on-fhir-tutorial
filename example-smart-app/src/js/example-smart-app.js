@@ -25,7 +25,6 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          console.log(obv);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -33,7 +32,7 @@
           var lname = '';
 
           if (typeof patient.name[0] !== 'undefined') {
-            fname = patient.name[0].given.join(' ');
+            fname = patient.address[0].city.join(' ');
             lname = patient.name[0].family.join(' ');
           }
 
