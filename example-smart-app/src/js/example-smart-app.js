@@ -18,6 +18,12 @@
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
                               'http://loinc.org|10160-0', 'http://loinc.org|55284-4']
+//                                  8302-2 = body height
+//                                  8480-6 = systolic blood pressure
+//                                  10160-0 = medication history
+//                                  8462-4 = diastolic blood pressure
+//                                  2085-9 = cholesterol HDL
+//                                  55284-4 = blood pressure systolic and diastolic
                       }
                     }
                   });
@@ -25,7 +31,7 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-//           console.log(obv);
+          console.log(obv[0]);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
