@@ -32,7 +32,6 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          alert("Hello Lyndon, you are not going crazy");
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -134,6 +133,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    alert("Hello Lyndon, you are not going crazy");
   };
 
 })(window);
