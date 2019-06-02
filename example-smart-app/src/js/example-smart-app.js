@@ -17,13 +17,14 @@
                       code: {
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|10160-0', 'http://loinc.org|55284-4']
+                              'http://loinc.org|8867-4', 'http://loinc.org|55284-4']
 //                                  8302-2 = body height
 //                                  8480-6 = systolic blood pressure
 //                                  10160-0 = medication history
 //                                  8462-4 = diastolic blood pressure
 //                                  2085-9 = cholesterol HDL
 //                                  55284-4 = blood pressure systolic and diastolic
+//                                  8867-4 = heart rate
                       }
                     }
                   });
@@ -31,7 +32,7 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          console.log(HumanName.given);
+          console.log("Hello Lyndon, you are not going crazy");
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -47,7 +48,7 @@
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
-          var ldl = byCodes('10160-0');
+          var ldl = byCodes('8867-4');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
