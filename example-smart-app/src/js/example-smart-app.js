@@ -49,7 +49,6 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          alert(cond);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -74,6 +73,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          p.cond = cond;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -109,6 +109,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      cond: {value: ''},
     };
   }
 
@@ -152,7 +153,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    alert("Hello Lyndon, you are not going crazy");
+    $('#conditionz').html(p.cond);
+    alert("maybe you are close")
   };
 
 })(window);
