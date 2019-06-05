@@ -11,6 +11,11 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+
+    function onReady(smart)  {
+      if (smart.hasOwnProperty('patient')) {
+        var patient = smart.patient;
+        var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -28,7 +33,18 @@
 //                                  2089-1 = LDL
                       }
                     }
+
+
+
                   });
+        var cond = smart.patient.api.fetchAll({
+                    type: 'Condition',
+                    category: 'problem',
+                    clinicalstatus: 'active'
+});
+        
+        
+        
 
         $.when(pt, obv).fail(onError);
 
