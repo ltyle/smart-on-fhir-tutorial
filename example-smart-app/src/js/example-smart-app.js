@@ -154,7 +154,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#conditionz').html(p.cond);
-    alert("maybe you are close")
+    alert("maybe you are close");
   };
 
 })(window);
