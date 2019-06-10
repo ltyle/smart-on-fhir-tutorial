@@ -153,7 +153,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#conditionz').html(p.cond);
+    $('#conditionz').html("You are so close, keep trying!!!");
     alert("maybe you are close");
   };
 
